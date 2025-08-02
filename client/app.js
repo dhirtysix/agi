@@ -1,5 +1,10 @@
+const baseInput = document.getElementById('api-base');
+if (!baseInput.value) {
+  baseInput.value = window.location.origin;
+}
+
 async function apiFetch(path, options = {}) {
-  const base = document.getElementById('api-base').value.replace(/\/$/, '');
+  const base = baseInput.value.replace(/\/$/, '');
   const res = await fetch(base + path, {
     headers: { 'Content-Type': 'application/json' },
     ...options,
