@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kube RTS</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <h1>Kubernetes RTS Controller</h1>
+
+  <section id="config">
+    <label for="api-base">Game server URL:</label>
+    <input id="api-base" type="text" value="" />
+    <button id="refresh-btn">Refresh Farms</button>
+  </section>
+
+  <section id="create-farm">
+    <h2>Create Server Farm</h2>
+    <input id="farm-name" type="text" placeholder="Farm name" />
+    <input id="farm-image" type="text" placeholder="Container image" value="mygame/bot:v1" />
+    <input id="farm-replicas" type="number" placeholder="Replicas" value="1" />
+    <button id="create-btn">Create</button>
+  </section>
+
+  <section id="farms">
+    <h2>Existing Farms</h2>
+    <table>
+      <thead>
+        <tr><th>Name</th><th>Replicas</th><th>Image</th><th>Actions</th></tr>
+      </thead>
+      <tbody id="farm-list"></tbody>
+    </table>
+  </section>
+
+  <script src="app.js"></script>
+</body>
+</html>
